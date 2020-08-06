@@ -1,6 +1,6 @@
 const fs = require('fs');
-const { EOL } = require('os');
-const { execSync } = require('child_process');
+const {EOL} = require('os');
+const {execSync} = require('child_process');
 const path = require('path');
 const expect = require('chai').expect;
 
@@ -12,11 +12,12 @@ describe('event-loop/events-order', () => {
     });
 
     it('порядок вывода совпадает', () => {
-      const solution = fs
-        .readFileSync(path.join(__dirname, '../solution.txt'), {
-          encoding: 'utf-8',
-        })
-        .replace(/\r\n|\r|\n/g, EOL);
+      const solution = fs.readFileSync(
+          path.join(__dirname, '../solution.txt'),
+          {
+            encoding: 'utf-8',
+          }
+      ).replace(/\r\n|\r|\n/g, EOL);
 
       const output = execSync(`node ${path.join(__dirname, '../index.js')}`, {
         encoding: 'utf-8',
