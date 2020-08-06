@@ -12,3 +12,5 @@ rules:
   require-jsdoc:
     - off
   linebreak-style: ['error', 'windows']
+  indent: ['error', 2]
+  object-curly-spacing: ['error', 'always']
